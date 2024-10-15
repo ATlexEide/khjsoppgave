@@ -184,6 +184,8 @@ to see that your conditional is working.
 
 ******************************************************************************/
 
-const userMale = false;
+const userMale = true;
 
 //your code here
+const userTitle = userMale ? "Mr." : "Mrs.";
+console.log(userTitle);
