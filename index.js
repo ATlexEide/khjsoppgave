@@ -134,7 +134,7 @@ can handle all cases correctly
 
 ******************************************************************************/
 
-let userName = "";
+let userName = "Alex";
 
 let userAge = 18;
 
@@ -145,7 +145,21 @@ let userIsBlocked = false;
 let goToPage = "";
 
 //your code here
-
+if (userName && userAge >= 18 && !userIsBlocked) {
+  userIsLoggedIn = true;
+  goToPage = "/home";
+  console.log(`Welcome ${userName}! Directing you to ${goToPage}`);
+} else if (!userName && userAge < 18 && userIsBlocked) {
+  throw "Conditions not met";
+} else if (!userName) {
+  throw "Username not valid";
+} else if (userAge < 18) {
+  throw "Age criteria not met (minimum 18 to enter)";
+} else if (userIsBlocked) {
+  throw "User blocked from the site";
+} else {
+  throw "Unexpected error occurred";
+}
 /******************************************************************************
 
 ASSIGNMENT 5
